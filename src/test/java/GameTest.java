@@ -1,8 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class GameTest {
 
@@ -52,11 +51,18 @@ public class GameTest {
         assertEquals(2, game.countPlayer());
     }
     @Test
-    public void gameCanCheckDraw(){
+    public void gameCanCheckDraw__true(){
         player1.takeCard(card);
        game.getDealer().takeCard(card2);
         assertTrue(game.checkDraw());
     }
+    @Test
+    public void gameCanCheckDraw__false(){
+        player1.takeCard(card5);
+        game.getDealer().takeCard(card9);
+        assertFalse(game.checkDraw());
+    }
+
 //
 //    @Test
 //    public void gameCanCheckWinner(){
