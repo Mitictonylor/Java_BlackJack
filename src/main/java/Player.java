@@ -35,9 +35,27 @@ public class Player {
 
     public int cardValue() {
         int total = 0;
-        for(Card card :this.cards){
-            total += card.getValue();
+        int aces = 0;
+        for (Card card : this.cards) {
+            if (card.getValue() == 1) {
+                aces += 1;
+            } else {
+                total += card.getValue();
+            }
+            for (int i = 0; i < aces; i++) {
+                if (total > 10) {
+                    total += 1;
+                } else {
+                    total += 11;
+                }
+            }
+        } return total;
+    }
+    public String toString(){
+        String cardListOutput = "";
+        for(Card card : this.cards){
+            cardListOutput += "\n" + card.toString();
         }
-        return total;
+        return cardListOutput;
     }
 }

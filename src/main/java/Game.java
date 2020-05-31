@@ -35,6 +35,11 @@ public class Game {
                 player.takeCard(card);
             }
         }
+        for (int i = 0; i < 2; i ++){
+            Card card = deck.getCard(i);
+            deck.removeCard(i);
+            dealer.takeCard(card);
+        }
     }
 //    public boolean checkDraw(){
 //        boolean drawgame = true;
