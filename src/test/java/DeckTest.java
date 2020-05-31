@@ -17,10 +17,10 @@ public class DeckTest {
     public void canPopulate52Cards(){
         assertEquals(52, deck.countCard());
     }
-    @Test
-    public void cardsCanBeTakenFromDeck(){
-        deck.removeCard();
-        assertEquals(51, deck.countCard());
-    }
+//    @Test
+//    public void cardsCanBeTakenFromDeck(){
+//        deck.removeCard();
+//        assertEquals(51, deck.countCard());
+//    }
 
 }

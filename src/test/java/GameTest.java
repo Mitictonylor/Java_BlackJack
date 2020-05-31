@@ -29,12 +29,12 @@ public class GameTest {
     public void gameHasPlayers(){
         assertEquals(2, game.countPlayer());
     }
-    @Test
-    public void gameCanStart(){
-        game.startTheGame();
-        assertEquals(2, player1.countCard());
-        assertEquals(2, player2.countCard());
-    }
+//    @Test
+//    public void gameCanStart(){
+//        game.startTheGame();
+//        assertEquals(2, player1.countCard());
+//        assertEquals(2, player2.countCard());
+//    }
 //    @Test
 //    public void gameCanCheckDraw(){
 //        player1.takeCard(highCard);
