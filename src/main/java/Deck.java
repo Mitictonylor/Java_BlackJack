@@ -35,4 +35,7 @@ public class Deck {
         return this.cards.size();
     }
 
+    public ArrayList<Card> getCards() {
+        return this.cards;
+    }
 }
