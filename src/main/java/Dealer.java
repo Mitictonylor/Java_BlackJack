@@ -36,13 +36,13 @@ public class Dealer {
                 total += card.getValue();
             }
         }
-            for (int i = 0; i < aces; i++) {
-                if (total > 10) {
-                    total += 1;
-                } else {
-                    total += 11;
-                }
+        for (int i = 0; i < aces; i++) {
+            if (total > 10) {
+                total += 1;
+            } else {
+                total += 11;
             }
+        }
         return total;
     }
 

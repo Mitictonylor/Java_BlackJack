@@ -47,6 +47,7 @@ public class DealerTest {
         dealer.takeCard(card5);
         assertEquals(18, dealer.cardsValue());
     }
+
     @Test
     public void weCanGetTheScoreOfTheCard__finishWithACESoItsValueIs1() {
         dealer.takeCard(card9);
@@ -58,6 +59,7 @@ public class DealerTest {
         dealer.takeCard(card);
         assertEquals(17, dealer.cardsValue());
     }
+
     @Test
     public void cardsCanBeConvertedToString() {
         dealer.takeCard(card2);
@@ -66,12 +68,14 @@ public class DealerTest {
                 "TWO of HEARTS\n" +
                 "ACE of HEARTS", dealer.toString());
     }
+
     @Test
     public void firstCardCanBeConvertedToString() {
         dealer.takeCard(card2);
         dealer.takeCard(card);
         assertEquals("TWO of HEARTS", dealer.toStringFirstCard());
     }
+
     @Test
     public void dealerCanLooseAllHisCard() {
         dealer.takeCard(card2);
@@ -84,6 +88,7 @@ public class DealerTest {
         assertEquals(0, dealer.countCard());
         assertEquals(0, dealer.cardsValue());
     }
+
     @Test
     public void dealerCanGetACardAtASpecifiedIndex() {
         dealer.takeCard(card2);

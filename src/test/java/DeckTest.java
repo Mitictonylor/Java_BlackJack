@@ -21,7 +21,7 @@ public class DeckTest {
 
     @Test
     public void canRemoveACardAtSpecifiedIndex() {
-       deck.removeCard(5);
+        deck.removeCard(5);
         assertEquals(51, deck.countCard());
     }
 }

@@ -34,6 +34,7 @@ public class PlayerTest {
         player.takeCard(card);
         assertEquals(1, player.countCard());
     }
+
     @Test
     public void playerCanLooseAllCard() {
         player.takeCard(card);
@@ -55,6 +56,7 @@ public class PlayerTest {
         player.takeCard(card3);
         assertEquals(21, player.cardsValue());
     }
+
     @Test
     public void weCanGetTheScoreOfTheCard__AceAsLastSoWillValue1() {
         player.takeCard(card3);
@@ -68,7 +70,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void  cardsCanBeConvertedToString() {
+    public void cardsCanBeConvertedToString() {
         player.takeCard(card2);
         player.takeCard(card);
         assertEquals("\n" +

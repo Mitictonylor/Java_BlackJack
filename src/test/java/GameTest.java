@@ -38,11 +38,13 @@ public class GameTest {
     public void gameHasPlayers() {
         assertEquals(2, game.countPlayer());
     }
+
     @Test
     public void gameCanAddPlayers() {
         game.addPlayer(player3);
         assertEquals(3, game.countPlayer());
     }
+
     @Test
     public void gameCanStart() {
         game.startTheGame();
@@ -50,21 +52,23 @@ public class GameTest {
         assertEquals(2, player2.countCard());
         assertEquals(2, game.countPlayer());
     }
+
     @Test
-    public void gameCanCheckDraw__true(){
+    public void gameCanCheckDraw__true() {
         player1.takeCard(card);
-       game.getDealer().takeCard(card2);
+        game.getDealer().takeCard(card2);
         assertTrue(game.checkDraw());
     }
+
     @Test
-    public void gameCanCheckDraw__false(){
+    public void gameCanCheckDraw__false() {
         player1.takeCard(card5);
         game.getDealer().takeCard(card9);
         assertFalse(game.checkDraw());
     }
 
     @Test
-    public void gameCanCheckWinner__dealerLost(){
+    public void gameCanCheckWinner__dealerLost() {
         player1.takeCard(card);
         player1.takeCard(card9);
         player2.takeCard(card5);
@@ -73,8 +77,9 @@ public class GameTest {
         assertEquals(2, game.checkWinner().size());
         assertFalse(game.checkWinner().isEmpty());
     }
+
     @Test
-    public void gameCanCheckWinner__dealerGotLessPointThanPlayer1ButMoreThanPlayer2(){
+    public void gameCanCheckWinner__dealerGotLessPointThanPlayer1ButMoreThanPlayer2() {
         player1.takeCard(card);
         player1.takeCard(card9);
         assertEquals(20, player1.cardsValue());
@@ -87,8 +92,9 @@ public class GameTest {
         assertEquals(1, game.checkWinner().size());
         assertFalse(game.checkWinner().isEmpty());
     }
+
     @Test
-    public void gameCanCheckWinner__dealerWins(){
+    public void gameCanCheckWinner__dealerWins() {
         player1.takeCard(card2);
         player1.takeCard(card6);
         assertEquals(17, player1.cardsValue());

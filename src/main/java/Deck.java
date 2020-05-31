@@ -22,9 +22,11 @@ public class Deck {
             }
         }
     }
+
     public Card getCard(int index) {
         return this.cards.get(index);
     }
+
     public void removeCard(int index) {
         this.cards.remove(index);
     }

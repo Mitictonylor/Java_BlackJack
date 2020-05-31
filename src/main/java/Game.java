@@ -11,10 +11,6 @@ public class Game {
         this.dealer = dealer;
     }
 
-    public void setDealer(Dealer dealer) {
-        this.dealer = dealer;
-    }
-
     public ArrayList<Player> getPlayers() {
         return this.players;
     }
@@ -30,8 +26,6 @@ public class Game {
     public void addPlayer(Player player) {
         this.players.add(player);
     }
-
-
 
     public void startTheGame() {
         for (Player player : this.players) {
@@ -50,6 +44,10 @@ public class Game {
 
     public Dealer getDealer() {
         return this.dealer;
+    }
+
+    public void setDealer(Dealer dealer) {
+        this.dealer = dealer;
     }
 
     public boolean checkDraw() {
