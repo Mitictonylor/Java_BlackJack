@@ -30,19 +30,19 @@ public class Runner {
         game.dealer.getCardAtIndex(0);
         System.out.println("The dealer has " + game.dealer.ToStringFirstCard() + " and {HIDDEN} \n");
         for (int i = 0; i < game.players.size(); i++) {
-            System.out.println(game.players.get(i).getName() + "'s hand :");
-            System.out.println(game.players.get(i).toString());
-            System.out.println(game.players.get(i).getName() + "'s hand value is " + game.players.get(i).cardsValue());
+            Player activePlayer = game.players.get(i);
+            System.out.println(activePlayer.getName() + "'s hand :");
+            System.out.println(activePlayer.toString());
+            System.out.println(activePlayer.getName() + "'s hand value is " + activePlayer.cardsValue());
             System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
             while(choiceMade != 2){
-//            if (choiceMade == 1) {
-                game.players.get(i).takeCard(game.deck.getCard(0));
+                activePlayer.takeCard(game.deck.getCard(0));
                 deck.removeCard(0);
                 System.out.println("You took a :" + game.deck.getCard(0).toString());
-                System.out.println("Your hand value is now " + game.players.get(i).cardsValue());
-                if (game.players.get(i).cardsValue() > 21){
+                System.out.println("Your hand value is now " + activePlayer.cardsValue());
+                if (activePlayer.cardsValue() > 21){
                     System.out.println("You lost this hand");
                     choiceMade = 2;
                 }else{
