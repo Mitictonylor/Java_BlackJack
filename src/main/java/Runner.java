@@ -36,15 +36,20 @@ public class Runner {
             System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
-            if (choiceMade == 1) {
+            while(choiceMade != 2){
+//            if (choiceMade == 1) {
                 game.players.get(i).takeCard(game.deck.getCard(0));
                 deck.removeCard(0);
                 System.out.println("You took a :" + game.deck.getCard(0).toString());
-                System.out.println(game.players.get(i).getName() + "'s hand value is " + game.players.get(i).cardsValue());
+                System.out.println("Your hand value is now " + game.players.get(i).cardsValue());
+                if (game.players.get(i).cardsValue() > 21){
+                    System.out.println("You lost this hand");
+                    choiceMade = 2;
+                }else{
+                System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
+               choice = scanner.next();
+               choiceMade = parseInt(choice);}
             }
-
-
-
         }
     }
 }
