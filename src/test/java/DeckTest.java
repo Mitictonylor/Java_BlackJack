@@ -19,7 +19,7 @@ public class DeckTest {
     }
     @Test
     public void cardsCanBeTakenFromDeck(){
-        deck.giveCard();
+        deck.removeCard();
         assertEquals(51, deck.countCard());
     }
 

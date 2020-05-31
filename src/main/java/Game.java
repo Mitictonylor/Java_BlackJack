@@ -21,7 +21,7 @@ public class Game {
     public void startTheGame(){
         for(Player player:this.players){
             for (int i = 0; i < 2; i ++){
-                Card card = deck.giveCard();
+                Card card = deck.removeCard(i);
                 player.takeCard(card);
             }
         }

@@ -21,20 +21,28 @@ public class Deck {
         }
 
     }
-    public Card giveCard() {
-        return this.cards.remove(0);
+    public Card removeCard(int index) {
+        return this.cards.remove(index);
     }
 
     public int countCard() {
         return this.cards.size();
     }
+    public Card getCard(int index){
+        return this.cards.get(index);
+    }
     public String toString(){
         String cardListOutput = "";
-        int i = 0;
         for(Card card : this.cards){
-            cardListOutput += "\n" + i + " " + card.toString();
-            i ++;
+            cardListOutput += "\n" + card.toString();
         }
         return cardListOutput;
+    }
+    public void addCard(Card addCard){
+        this.cards.add(addCard);
+    }
+    public void addDeck(Deck comingFrom){
+        this.cards.add(comingFrom.getCard(0));
+        comingFrom.removeCard(0);
     }
 }
