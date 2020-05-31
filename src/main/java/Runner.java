@@ -29,6 +29,7 @@ public class Runner {
         game.startTheGame();
         game.dealer.getCardAtIndex(0);
         System.out.println("The dealer has " + game.dealer.ToStringFirstCard() + " and {HIDDEN} \n");
+        int maxPlayerCardValue = 0;
         for (int i = 0; i < game.players.size(); i++) {
             Player activePlayer = game.players.get(i);
             System.out.println(activePlayer.getName() + "'s hand :");
@@ -48,8 +49,18 @@ public class Runner {
                 }else{
                 System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
                choice = scanner.next();
-               choiceMade = parseInt(choice);}
+               choiceMade = parseInt(choice);
+                if (activePlayer.cardsValue() > maxPlayerCardValue){
+                    maxPlayerCardValue = activePlayer.cardsValue();
+                }
+                }
             }
+        }
+
+
+        System.out.println("Dealer Cards: " + game.dealer.toString());
+        if(game.dealer.cardsValue() > maxPlayerCardValue){
+            System.out.println("The Dealer won");
         }
     }
 }
