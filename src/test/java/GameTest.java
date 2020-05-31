@@ -49,6 +49,7 @@ public class GameTest {
         game.startTheGame();
         assertEquals(2, player1.countCard());
         assertEquals(2, player2.countCard());
+        assertEquals(2, game.countPlayer());
     }
 //    @Test
 //    public void gameCanCheckDraw(){

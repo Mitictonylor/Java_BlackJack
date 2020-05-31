@@ -31,6 +31,8 @@ public class Game {
         this.players.add(player);
     }
 
+
+
     public void startTheGame() {
         for (Player player : this.players) {
             for (int i = 0; i < 2; i++) {
