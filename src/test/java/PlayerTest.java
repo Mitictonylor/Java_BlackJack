@@ -66,4 +66,13 @@ public class PlayerTest {
         player.takeCard(card);
         assertEquals(13, player.cardsValue());
     }
+
+    @Test
+    public void cardsCanBeConvertedToString() {
+        player.takeCard(card2);
+        player.takeCard(card);
+        assertEquals("\n" +
+                "TWO of HEARTS\n" +
+                "ACE of HEARTS", player.toString());
+    }
 }
