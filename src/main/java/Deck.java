@@ -19,10 +19,9 @@ public class Deck {
                 this.cards.add(new Card(suit,rank));
             }
         }
-
     }
-    public Card removeCard(int index) {
-        return this.cards.remove(index);
+    public void removeCard(int index) {
+        this.cards.remove(index);
     }
 
     public int countCard() {
