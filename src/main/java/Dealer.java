@@ -21,6 +21,9 @@ public class Dealer {
         public ArrayList<Card> getCard() {
             return this.cards;
         }
+        public Card getCardAtIndex(int index){
+            return this.cards.get(index);
+        }
 
         public void setCard(ArrayList<Card> card) {
             this.cards = card;
@@ -34,12 +37,30 @@ public class Dealer {
             this.cards.add(card);
         }
 
-        public int cardValue() {
-            int total = 0;
-            for(Card card :this.cards){
+    public int cardsValue() {
+        int total = 0;
+        int aces = 0;
+        for (Card card : this.cards) {
+            if (card.getValue() == 1) {
+                aces += 1;
+            } else {
                 total += card.getValue();
             }
-            return total;
+            for (int i = 0; i < aces; i++) {
+                if (total > 10) {
+                    total += 1;
+                } else {
+                    total += 11;
+                }
+            }
+        } return total;
+    }
+    public String toString(){
+        String cardListOutput = "";
+        for(Card card : this.cards){
+            cardListOutput += "\n" + card.toString();
         }
+        return cardListOutput;
+    }
     }
 

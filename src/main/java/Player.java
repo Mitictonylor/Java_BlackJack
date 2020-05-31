@@ -33,7 +33,7 @@ public class Player {
         this.cards.add(card);
     }
 
-    public int cardValue() {
+    public int cardsValue() {
         int total = 0;
         int aces = 0;
         for (Card card : this.cards) {

@@ -28,6 +28,6 @@ public class PlayerTest {
     @Test
     public void weCanGetTheScoreOfTheCard(){
         player.takeCard(card);
-        assertEquals(1, player.cardValue());
+        assertEquals(1, player.cardsValue());
     }
 }
