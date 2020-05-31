@@ -18,6 +18,10 @@ public class Dealer {
         return this.cards.size();
     }
 
+    public ArrayList<Card> getCards() {
+        return this.cards;
+    }
+
     public void takeCard(Card card) {
         this.cards.add(card);
     }
@@ -51,7 +55,7 @@ public class Dealer {
     }
 
     public String toStringFirstCard() {
-        String firstCard = "\n" + this.cards.get(0).toString();
+        String firstCard = this.cards.get(0).toString();
         return firstCard;
     }
 

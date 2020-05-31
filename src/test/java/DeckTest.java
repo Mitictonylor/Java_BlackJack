@@ -11,16 +11,17 @@ public class DeckTest {
     @Before
     public void setUp() {
         deck = new Deck();
+
     }
 
     @Test
-    public void canPopulate52Cards() {
+    public void canAdd52Cards() {
         assertEquals(52, deck.countCard());
     }
-//    @Test
-//    public void cardsCanBeTakenFromDeck(){
-//        deck.removeCard();
-//        assertEquals(51, deck.countCard());
-//    }
 
+    @Test
+    public void canRemoveACardAtSpecifiedIndex() {
+       deck.removeCard(5);
+        assertEquals(51, deck.countCard());
+    }
 }

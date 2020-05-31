@@ -29,8 +29,8 @@ public class Runner {
         game.dealer.getCardAtIndex(0);
         System.out.println("The dealer has " + game.dealer.toStringFirstCard() + " and {HIDDEN} \n");
         int maxPlayerCardValue = 0;
-        for (int i = 0; i < game.players.size(); i++) {
-            Player activePlayer = game.players.get(i);
+        for (int i = 0; i < game.getPlayers().size(); i++) {
+            Player activePlayer = game.getPlayers().get(i);
             System.out.println(activePlayer.getName() + "'s hand :");
             System.out.println(activePlayer.toString());
             System.out.println(activePlayer.getName() + "'s hand value is " + activePlayer.cardsValue());

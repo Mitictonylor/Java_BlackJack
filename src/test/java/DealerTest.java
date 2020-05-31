@@ -72,4 +72,30 @@ public class DealerTest {
         dealer.takeCard(card);
         assertEquals("TWO of HEARTS", dealer.toStringFirstCard());
     }
+    @Test
+    public void dealerCanLooseAllHisCard() {
+        dealer.takeCard(card2);
+        assertEquals(1, dealer.countCard());
+        assertEquals(2, dealer.cardsValue());
+        dealer.takeCard(card);
+        assertEquals(2, dealer.countCard());
+        assertEquals(13, dealer.cardsValue());
+        dealer.looseCard();
+        assertEquals(0, dealer.countCard());
+        assertEquals(0, dealer.cardsValue());
+    }
+    @Test
+    public void dealerCanGetACardAtASpecifiedIndex() {
+        dealer.takeCard(card2);
+        assertEquals(1, dealer.countCard());
+        assertEquals(2, dealer.cardsValue());
+        dealer.takeCard(card);
+        assertEquals(2, dealer.countCard());
+        assertEquals(13, dealer.cardsValue());
+        dealer.getCardAtIndex(0);
+        assertEquals(2, dealer.getCards().get(0).getValue());
+        dealer.getCardAtIndex(1);
+        assertEquals(1, dealer.getCards().get(1).getValue());
+    }
+
 }
