@@ -10,14 +10,16 @@ public class Card {
     public Suit getSuit() {
         return this.suit;
     }
-    public Rank getRank(){
+
+    public Rank getRank() {
         return this.rank;
     }
 
     public int getValue() {
         return this.rank.getValue();
     }
-    public String toString(){
+
+    public String toString() {
         return this.rank.toString() + " of " + this.suit.toString();
-}
+    }
 }

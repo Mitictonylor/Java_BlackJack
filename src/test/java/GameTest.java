@@ -14,7 +14,7 @@ public class GameTest {
     Card lowCard;
 
     @Before
-    public void setup(){
+    public void setup() {
         player1 = new Player("Colin");
         player2 = new Player("Louise");
         deck = new Deck();
@@ -25,12 +25,14 @@ public class GameTest {
         highCard = new Card(Suit.HEARTS, Rank.QUEEN);
         lowCard = new Card(Suit.SPADES, Rank.JACK);
     }
+
     @Test
-    public void gameHasPlayers(){
+    public void gameHasPlayers() {
         assertEquals(2, game.countPlayer());
     }
+
     @Test
-    public void gameCanStart(){
+    public void gameCanStart() {
         game.startTheGame();
         assertEquals(2, player1.countCard());
         assertEquals(2, player2.countCard());

@@ -62,13 +62,14 @@ public class Runner {
         System.out.println(game.dealer.getName() + "'s hand value is " + game.dealer.cardsValue());
         if (game.checkWinner().isEmpty()) {
             System.out.println("The Dealer won");
-        }else{
-        while (game.dealer.cardsValue() < 17) {
-            game.dealer.takeCard(game.deck.getCard(0));
-            System.out.println("The Dealer took a :" + game.deck.getCard(0).toString());
-            System.out.println("His  hand value is now " + game.dealer.cardsValue());
-            game.deck.removeCard(0);
-        }}
+        } else {
+            while (game.dealer.cardsValue() < 17) {
+                game.dealer.takeCard(game.deck.getCard(0));
+                System.out.println("The Dealer took a :" + game.deck.getCard(0).toString());
+                System.out.println("His  hand value is now " + game.dealer.cardsValue());
+                game.deck.removeCard(0);
+            }
+        }
 
         if (game.dealer.cardsValue() > 21) {
             game.dealer.looseCard();
@@ -76,17 +77,17 @@ public class Runner {
                 System.out.println(player.getName() + " won with a total of " + player.cardsValue());
             }
             ;
-        } else if (!game.checkWinner().isEmpty() ) {
+        } else if (!game.checkWinner().isEmpty()) {
             for (Player player : game.checkWinner()) {
                 System.out.println(player.getName() + " won with a total of " + player.cardsValue());
             }
         } else game.checkDraw();
-            for(Player player: game.players){
-                if(player.cardsValue() == game.dealer.cardsValue()){
-                    System.out.println("It's a draw between the dealer and  " + player.getName() + ". You both scored " + player.cardsValue());
-                }
+        for (Player player : game.players) {
+            if (player.cardsValue() == game.dealer.cardsValue()) {
+                System.out.println("It's a draw between the dealer and  " + player.getName() + ". You both scored " + player.cardsValue());
+            }
         }
     }
-    }
+}
 
 

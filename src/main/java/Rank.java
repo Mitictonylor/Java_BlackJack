@@ -15,10 +15,11 @@ public enum Rank {
 
     private final int value; // final because the value wont change as the CONST in javascript
 
-    Rank(int value){
+    Rank(int value) {
         this.value = value;
     }
-//enum is a special kind of class
+
+    //enum is a special kind of class
     public int getValue() {
         return this.value;
     }

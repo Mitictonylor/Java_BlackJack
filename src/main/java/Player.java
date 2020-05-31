@@ -4,7 +4,7 @@ public class Player {
     private String name;
     private ArrayList<Card> cards;
 
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
         this.cards = new ArrayList<Card>();
     }
@@ -32,7 +32,8 @@ public class Player {
     public void takeCard(Card card) {
         this.cards.add(card);
     }
-    public void looseCard(){
+
+    public void looseCard() {
         this.cards.clear();
     }
 
@@ -46,18 +47,19 @@ public class Player {
                 total += card.getValue();
             }
         }
-            for (int i = 0; i < aces; i++) {
-                if (total > 10) {
-                    total += 1;
-                } else {
-                    total += 11;
-                }
+        for (int i = 0; i < aces; i++) {
+            if (total > 10) {
+                total += 1;
+            } else {
+                total += 11;
             }
-         return total;
+        }
+        return total;
     }
-    public String toString(){
+
+    public String toString() {
         String cardListOutput = "";
-        for(Card card : this.cards){
+        for (Card card : this.cards) {
             cardListOutput += "\n" + card.toString();
         }
         return cardListOutput;

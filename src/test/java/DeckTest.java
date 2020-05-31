@@ -9,12 +9,12 @@ public class DeckTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp() {
         deck = new Deck();
     }
 
     @Test
-    public void canPopulate52Cards(){
+    public void canPopulate52Cards() {
         assertEquals(52, deck.countCard());
     }
 //    @Test
