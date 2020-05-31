@@ -27,7 +27,8 @@ public class Runner {
         }
 
         game.startTheGame();
-        game.dealer.getCard()
+        game.dealer.getCardAtIndex(0);
+        System.out.println("The dealer has ");
         for (int i = 0; i < game.players.size(); i++) {
             System.out.println("Your hand:");
             System.out.println(game.players.get(i).toString());

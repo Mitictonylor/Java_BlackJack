@@ -62,5 +62,9 @@ public class Dealer {
         }
         return cardListOutput;
     }
+    public String ToStringFirstCard(){
+            String firstCard = "\n" + this.cards.get(0).toString();
+    return firstCard;
+        }
     }
 
