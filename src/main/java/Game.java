@@ -30,14 +30,14 @@ public class Game {
     public void startTheGame(){
         for(Player player:this.players){
             for (int i = 0; i < 2; i ++){
-                Card card = deck.getCard(i);
-                deck.removeCard(i);
+                Card card = deck.getCard(0);
+                deck.removeCard(0);
                 player.takeCard(card);
             }
         }
         for (int i = 0; i < 2; i ++){
-            Card card = deck.getCard(i);
-            deck.removeCard(i);
+            Card card = deck.getCard(0);
+            deck.removeCard(0);
             dealer.takeCard(card);
         }
     }

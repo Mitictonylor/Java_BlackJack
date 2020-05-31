@@ -42,6 +42,7 @@ public class Player {
             } else {
                 total += card.getValue();
             }
+        }
             for (int i = 0; i < aces; i++) {
                 if (total > 10) {
                     total += 1;
@@ -49,7 +50,7 @@ public class Player {
                     total += 11;
                 }
             }
-        } return total;
+         return total;
     }
     public String toString(){
         String cardListOutput = "";

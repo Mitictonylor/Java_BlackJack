@@ -10,7 +10,6 @@ public class Runner {
 
         //Creating the Deck
         Deck deck = new Deck();
-        System.out.println(deck);
         Game game = new Game(deck);
         game.createDealer();
 
@@ -40,9 +39,9 @@ public class Runner {
             int choiceMade = parseInt(choice);
             while(choiceMade != 2){
                 activePlayer.takeCard(game.deck.getCard(0));
-                deck.removeCard(0);
                 System.out.println("You took a :" + game.deck.getCard(0).toString());
                 System.out.println("Your hand value is now " + activePlayer.cardsValue());
+                game.deck.removeCard(0);
                 if (activePlayer.cardsValue() > 21){
                     System.out.println("You lost this hand");
                     choiceMade = 2;
@@ -61,6 +60,9 @@ public class Runner {
         System.out.println("Dealer Cards: " + game.dealer.toString());
         if(game.dealer.cardsValue() > maxPlayerCardValue){
             System.out.println("The Dealer won");
+        }
+        while (game.dealer.cardsValue() < 17){
+            game.dealer.
         }
     }
 }
