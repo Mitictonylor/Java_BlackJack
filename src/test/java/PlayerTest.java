@@ -68,7 +68,7 @@ public class PlayerTest {
     }
 
     @Test
-    public void cardsCanBeConvertedToString() {
+    public void  cardsCanBeConvertedToString() {
         player.takeCard(card2);
         player.takeCard(card);
         assertEquals("\n" +
