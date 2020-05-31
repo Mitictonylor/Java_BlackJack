@@ -48,6 +48,10 @@ public class Game {
         }
     }
 
+    public Dealer getDealer() {
+        return this.dealer;
+    }
+
     public boolean checkDraw() {
         boolean drawGame = false;
         int handTotal = this.players.get(0).cardsValue();

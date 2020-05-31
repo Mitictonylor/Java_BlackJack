@@ -25,7 +25,7 @@ public class GameTest {
         deck = new Deck();
         game = new Game(deck);
         card = new Card(Suit.HEARTS, Rank.ACE);
-        card2 = new Card(Suit.HEARTS, Rank.TWO);
+        card2 = new Card(Suit.SPADES, Rank.ACE);
         card5 = new Card(Suit.HEARTS, Rank.FIVE);
         card6 = new Card(Suit.HEARTS, Rank.SIX);
         card9 = new Card(Suit.HEARTS, Rank.NINE);
@@ -51,12 +51,12 @@ public class GameTest {
         assertEquals(2, player2.countCard());
         assertEquals(2, game.countPlayer());
     }
-//    @Test
-//    public void gameCanCheckDraw(){
-//        player1.takeCard(highCard);
-//        player2.takeCard(highCard);
-//        assertTrue(game.checkDraw());
-//    }
+    @Test
+    public void gameCanCheckDraw(){
+        player1.takeCard(card);
+       game.getDealer().takeCard(card2);
+        assertTrue(game.checkDraw());
+    }
 //
 //    @Test
 //    public void gameCanCheckWinner(){
