@@ -87,4 +87,18 @@ public class GameTest {
         assertEquals(1, game.checkWinner().size());
         assertFalse(game.checkWinner().isEmpty());
     }
+    @Test
+    public void gameCanCheckWinner__dealerWins(){
+        player1.takeCard(card2);
+        player1.takeCard(card6);
+        assertEquals(17, player1.cardsValue());
+        player2.takeCard(card5);
+        player2.takeCard(card6);
+        assertEquals(11, player2.cardsValue());
+        game.getDealer().takeCard(card);
+        game.getDealer().takeCard(card9);
+        assertEquals(20, game.getDealer().cardsValue());
+        assertEquals(0, game.checkWinner().size());
+        assertTrue(game.checkWinner().isEmpty());
+    }
 }
