@@ -65,7 +65,11 @@ public class DealerTest {
         assertEquals("\n" +
                 "TWO of HEARTS\n" +
                 "ACE of HEARTS", dealer.toString());
-
-
+    }
+    @Test
+    public void firstCardCanBeConvertedToString() {
+        dealer.takeCard(card2);
+        dealer.takeCard(card);
+        assertEquals("TWO of HEARTS", dealer.toStringFirstCard());
     }
 }

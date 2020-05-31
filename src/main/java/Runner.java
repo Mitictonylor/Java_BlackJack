@@ -27,7 +27,7 @@ public class Runner {
 
         game.startTheGame();
         game.dealer.getCardAtIndex(0);
-        System.out.println("The dealer has " + game.dealer.ToStringFirstCard() + " and {HIDDEN} \n");
+        System.out.println("The dealer has " + game.dealer.toStringFirstCard() + " and {HIDDEN} \n");
         int maxPlayerCardValue = 0;
         for (int i = 0; i < game.players.size(); i++) {
             Player activePlayer = game.players.get(i);

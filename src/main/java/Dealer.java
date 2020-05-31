@@ -50,7 +50,7 @@ public class Dealer {
         return cardListOutput;
     }
 
-    public String ToStringFirstCard() {
+    public String toStringFirstCard() {
         String firstCard = "\n" + this.cards.get(0).toString();
         return firstCard;
     }
