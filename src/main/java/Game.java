@@ -58,6 +58,7 @@ public class Game {
         for(Player player:this.players){
             if(player.cardsValue() > dealer.cardsValue()){
                 winner.add(player);
+            }else{
             }
         }
         return winner;

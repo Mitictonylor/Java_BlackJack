@@ -37,21 +37,22 @@ public class Runner {
             System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
-            while(choiceMade != 2){
+            while (choiceMade != 2) {
                 activePlayer.takeCard(game.deck.getCard(0));
                 System.out.println("You took a :" + game.deck.getCard(0).toString());
                 System.out.println("Your hand value is now " + activePlayer.cardsValue());
                 game.deck.removeCard(0);
-                if (activePlayer.cardsValue() > 21){
+                if (activePlayer.cardsValue() > 21) {
                     System.out.println("You lost this hand");
+                    activePlayer.looseCard();
                     choiceMade = 2;
-                }else{
-                System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
-               choice = scanner.next();
-               choiceMade = parseInt(choice);
-                if (activePlayer.cardsValue() > maxPlayerCardValue){
-                    maxPlayerCardValue = activePlayer.cardsValue();
-                }
+                } else {
+                    System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
+                    choice = scanner.next();
+                    choiceMade = parseInt(choice);
+                    if (activePlayer.cardsValue() > maxPlayerCardValue) {
+                        maxPlayerCardValue = activePlayer.cardsValue();
+                    }
                 }
             }
         }
@@ -59,19 +60,24 @@ public class Runner {
 
         System.out.println("Dealer Cards: " + game.dealer.toString());
         System.out.println(game.dealer.getName() + "'s hand value is " + game.dealer.cardsValue());
-        if(game.dealer.cardsValue() > maxPlayerCardValue){
+        if (game.checkWinner().isEmpty()) {
             System.out.println("The Dealer won");
         }
-        while (game.dealer.cardsValue() < 17){
+        while (game.dealer.cardsValue() < 17) {
             game.dealer.takeCard(game.deck.getCard(0));
             System.out.println("The Dealer took a :" + game.deck.getCard(0).toString());
             System.out.println("His  hand value is now " + game.dealer.cardsValue());
             game.deck.removeCard(0);
         }
-        if(game.dealer.cardsValue() > maxPlayerCardValue){
-            System.out.println("The Dealer won");
-        }else if(game.dealer.cardsValue() == maxPlayerCardValue){
-            System.out.println("It's a draw");
+        if (game.dealer.cardsValue() > 21) {
+            game.dealer.looseCard();
+            for (Player player : game.checkWinner()) {
+                System.out.println(player + " won with a total of " + player.cardsValue());
+            }
+            ;
+        } else {
+            game.checkDraw();
         }
     }
+
 }

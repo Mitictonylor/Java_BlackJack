@@ -32,6 +32,9 @@ public class Player {
     public void takeCard(Card card) {
         this.cards.add(card);
     }
+    public void looseCard(){
+        this.cards.clear();
+    }
 
     public int cardsValue() {
         int total = 0;

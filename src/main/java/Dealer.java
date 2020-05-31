@@ -66,7 +66,9 @@ public class Dealer {
                 String firstCard = "\n" + this.cards.get(0).toString();
             return firstCard;
             }
-
+    public void looseCard(){
+        this.cards.clear();
+    }
 
 
 
