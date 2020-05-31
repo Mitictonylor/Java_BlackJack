@@ -28,4 +28,13 @@ public class Deck {
     public int countCard() {
         return this.cards.size();
     }
+    public String toString(){
+        String cardListOutput = "";
+        int i = 0;
+        for(Card card : this.cards){
+            cardListOutput += "\n" + i + " " + card.toString();
+            i ++;
+        }
+        return cardListOutput;
+    }
 }

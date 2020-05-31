@@ -17,5 +17,7 @@ public class Card {
     public int getValue() {
         return this.rank.getValue();
     }
-
+    public String toString(){
+        return this.suit.toString() + " of " + this.rank.toString();
+}
 }
