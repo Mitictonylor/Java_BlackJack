@@ -14,18 +14,13 @@ public class Dealer {
         return this.name;
     }
 
-    public void takeCard(Card card) {
-        this.cards.add(card);
-    }
-
-    public Card getCardAtIndex(int index) {
-        return this.cards.get(index);
-    }
-
     public int countCard() {
         return this.cards.size();
     }
 
+    public void takeCard(Card card) {
+        this.cards.add(card);
+    }
 
     public int cardsValue() {
         int total = 0;
@@ -36,6 +31,7 @@ public class Dealer {
             } else {
                 total += card.getValue();
             }
+        }
             for (int i = 0; i < aces; i++) {
                 if (total > 10) {
                     total += 1;
@@ -43,7 +39,6 @@ public class Dealer {
                     total += 11;
                 }
             }
-        }
         return total;
     }
 
@@ -64,6 +59,9 @@ public class Dealer {
         this.cards.clear();
     }
 
+    public Card getCardAtIndex(int index) {
+        return this.cards.get(index);
+    }
 
 }
 
