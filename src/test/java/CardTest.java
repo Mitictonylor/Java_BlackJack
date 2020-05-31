@@ -26,6 +26,9 @@ public class CardTest {
         public void cardHasValue() {
             assertEquals(1, card.getValue());
         }
-
+        @Test
+        public void cardCanBeConvertedToString() {
+            assertEquals("ACE of HEARTS", card.toString());
+        }
 
 }
