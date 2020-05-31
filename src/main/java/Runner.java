@@ -58,11 +58,20 @@ public class Runner {
 
 
         System.out.println("Dealer Cards: " + game.dealer.toString());
+        System.out.println(game.dealer.getName() + "'s hand value is " + game.dealer.cardsValue());
         if(game.dealer.cardsValue() > maxPlayerCardValue){
             System.out.println("The Dealer won");
         }
         while (game.dealer.cardsValue() < 17){
-            game.dealer.
+            game.dealer.takeCard(game.deck.getCard(0));
+            System.out.println("The Dealer took a :" + game.deck.getCard(0).toString());
+            System.out.println("His  hand value is now " + game.dealer.cardsValue());
+            game.deck.removeCard(0);
+        }
+        if(game.dealer.cardsValue() > maxPlayerCardValue){
+            System.out.println("The Dealer won");
+        }else if(game.dealer.cardsValue() == maxPlayerCardValue){
+            System.out.println("It's a draw");
         }
     }
 }

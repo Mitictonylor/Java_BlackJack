@@ -41,26 +41,25 @@ public class Game {
             dealer.takeCard(card);
         }
     }
-//    public boolean checkDraw(){
-//        boolean drawgame = true;
-//        int handTotal = this.players.get(0).cardValue();
-//        for(Player player: this.players){
-//            if(player.cardValue() != handTotal){
-//                drawgame = false;
-//            }
-//        }
-//        return drawgame;
-//    }
-//
-//    public Player checkWinner(){
-//        int highest = 0;
-//        Player winner = null;
-//        for(Player player:this.players){
-//            if(player.cardValue() > highest){
-//                highest = player.cardValue();
-//                winner = player;
-//            }
-//        }
-//        return winner;
-//    }
+    public boolean checkDraw(){
+        boolean drawGame = false;
+        int handTotal = this.players.get(0).cardsValue();
+        for(Player player: this.players){
+            if(player.cardsValue() == dealer.cardsValue()){
+                drawGame = true;
+            }
+        }
+        return drawGame;
+    }
+
+    public ArrayList<Player> checkWinner(){
+        int highest = 0;
+        ArrayList<Player> winner = new ArrayList<Player>();
+        for(Player player:this.players){
+            if(player.cardsValue() > dealer.cardsValue()){
+                winner.add(player);
+            }
+        }
+        return winner;
+    }
 }
