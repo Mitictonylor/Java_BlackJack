@@ -32,6 +32,17 @@ public class PlayerTest {
         player.takeCard(card);
         assertEquals(1, player.countCard());
     }
+    @Test
+    public void playerCanLooseAllCard() {
+        player.takeCard(card);
+        assertEquals(1, player.countCard());
+        player.takeCard(card2);
+        assertEquals(2, player.countCard());
+        player.takeCard(card3);
+        assertEquals(3, player.countCard());
+        player.looseCard();
+        assertEquals(0, player.countCard());
+    }
 
     @Test
     public void weCanGetTheScoreOfTheCard() {

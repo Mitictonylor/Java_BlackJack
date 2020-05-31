@@ -13,18 +13,6 @@ public class Player {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Card> getCard() {
-        return this.cards;
-    }
-
-    public void setCard(ArrayList<Card> card) {
-        this.cards = card;
-    }
-
     public int countCard() {
         return this.cards.size();
     }
