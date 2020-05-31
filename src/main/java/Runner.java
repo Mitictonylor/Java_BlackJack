@@ -28,17 +28,21 @@ public class Runner {
 
         game.startTheGame();
         game.dealer.getCardAtIndex(0);
-        System.out.println("The dealer has ");
+        System.out.println("The dealer has " + game.dealer.ToStringFirstCard() + " and {HIDDEN} \n");
         for (int i = 0; i < game.players.size(); i++) {
-            System.out.println("Your hand:");
+            System.out.println(game.players.get(i).getName() + "'s hand :");
             System.out.println(game.players.get(i).toString());
-            System.out.println("Your hand value is " + game.players.get(i).cardsValue());
-            System.out.println("What do you want to do?  press 1 for stay , or 2 to take another card");
+            System.out.println(game.players.get(i).getName() + "'s hand value is " + game.players.get(i).cardsValue());
+            System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
             if (choiceMade == 1) {
-
+                game.players.get(i).takeCard(game.deck.getCard(0));
+                deck.removeCard(0);
+                System.out.println("You took a :" + game.deck.getCard(0).toString());
+                System.out.println(game.players.get(i).getName() + "'s hand value is " + game.players.get(i).cardsValue());
             }
+
 
 
         }

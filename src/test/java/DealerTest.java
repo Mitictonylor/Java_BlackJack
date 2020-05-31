@@ -31,6 +31,6 @@ public class DealerTest {
     public void weCanGetTheScoreOfTheCard(){
         dealer.takeCard(card);
         dealer.takeCard(card2);
-        assertEquals(3, dealer.cardValue());
+        assertEquals(3, dealer.cardsValue());
     }
 }
