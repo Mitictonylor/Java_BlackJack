@@ -70,6 +70,9 @@ public class Runner {
 
         System.out.println("Dealer Cards: " + game.dealer.toString());
         System.out.println(game.dealer.getName() + "'s hand value is " + game.dealer.cardsValue());
+        if ((game.dealer.cardsValue() == 21) && (game.dealer.countCard()) == 2) {
+            System.out.println("Damn, the dealer got his majesty the blackjack");
+        }
         if (game.checkWinner().isEmpty()) {
             System.out.println("The Dealer won");
         } else {
@@ -84,7 +87,7 @@ public class Runner {
                 game.deck.removeCard(0);
             }
         }
-
+        game.checkWinner();
         if (game.dealer.cardsValue() > 21) {
             game.dealer.looseCard();
             for (Player player : game.checkWinner()) {

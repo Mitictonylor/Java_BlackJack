@@ -62,14 +62,29 @@ public class Game {
     }
 
     public ArrayList<Player> checkWinner() {
-        int highest = 0;
         ArrayList<Player> winner = new ArrayList<Player>();
-        for (Player player : this.players) {
-            if (player.cardsValue() > dealer.cardsValue()) {
-                winner.add(player);
-            } else {
+        if (this.checkForStraightBlackJack().size() > 0) {
+            for (Player player : this.checkForStraightBlackJack()) {
+                if (player.cardsValue() > dealer.cardsValue()) {
+                    winner.add(player);
+                }
+            }
+        } else {
+            for (Player player : this.players) {
+                if (player.cardsValue() > dealer.cardsValue()) {
+                    winner.add(player);
+                }
             }
         }
         return winner;
+    }
+    public ArrayList<Player> checkForStraightBlackJack() {
+        ArrayList<Player> blackjack = new ArrayList<Player>();
+        for (Player player : this.players) {
+            if (player.cardsValue() == 21 && player.countCard() == 2) {
+                blackjack.add(player);
+            }
+        }
+        return blackjack;
     }
 }
