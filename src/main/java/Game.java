@@ -87,4 +87,20 @@ public class Game {
         }
         return blackjack;
     }
+
+    public void playerHandToString(Player activePlayer) {
+        System.out.println(activePlayer.getName() + "'s hand :" + activePlayer.toString());
+    }
+    public void playerHandValueToString(Player activePlayer) {
+        System.out.println(activePlayer.getName() + "'s hand value is " + activePlayer.cardsValue());
+    }
+    public void twistOrStand() {
+        System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
+    }
+    public void dealerHandToString(Dealer dealer) {
+        System.out.println(dealer.getName() + "'s hand :" + dealer.toString());
+    }
+    public void dealerHandValueToString(Dealer dealer) {
+        System.out.println(dealer.getName() + "'s hand value is " + dealer.cardsValue());
+    }
 }
