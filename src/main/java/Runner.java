@@ -87,7 +87,7 @@ public class Runner {
                 game.deck.removeCard(0);
             }
         }
-        game.checkWinner();
+
         if (game.dealer.cardsValue() > 21) {
             game.dealer.looseCard();
             for (Player player : game.checkWinner()) {
@@ -97,14 +97,15 @@ public class Runner {
         } else if (!game.checkWinner().isEmpty()) {
             for (Player player : game.checkWinner()) {
                 System.out.println(player.getName() + " won with a total of " + player.cardsValue());
-                break;
             }
-        } else game.checkDraw();
+        } else {
+            game.checkDraw();
         for (Player player : game.players) {
             if (player.cardsValue() == game.dealer.cardsValue()) {
                 System.out.println("It's a draw between the dealer and  " + player.getName() + ". You both scored " + player.cardsValue());
             }
         }
+    }
     }
 }
 
