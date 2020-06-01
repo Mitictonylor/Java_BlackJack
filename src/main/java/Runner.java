@@ -38,6 +38,8 @@ public class Runner {
             System.out.println(activePlayer.getName() + "'s hand :");
             System.out.println(activePlayer.toString());
             System.out.println(activePlayer.getName() + "'s hand value is " + activePlayer.cardsValue());
+            if ((activePlayer.cardsValue() == 21) && (activePlayer.countCard()) == 2) {
+                System.out.println("Whooo, that's his majesty the blackjack");}
             System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
@@ -54,8 +56,8 @@ public class Runner {
                     System.out.println("You lost this hand");
                     activePlayer.looseCard();
                     choiceMade = 2;
-                } else {
-                    System.out.println("What do you want to do?  press 1 for twist , or 2 to Stick");
+                } else{
+                    System.out.println("What do you want to do?  press 1 for twist , or 2 to Stand");
                     choice = scanner.next();
                     choiceMade = parseInt(choice);
                     if (activePlayer.cardsValue() > maxPlayerCardValue) {
