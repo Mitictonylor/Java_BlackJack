@@ -31,24 +31,16 @@ public class Runner {
         System.out.println("The dealer has " + game.dealer.toStringFirstCard() + " and {HIDDEN} \n");
         int maxPlayerCardValue = 0;
         for (int i = 0; i < game.getPlayers().size(); i++) {
-            if (game.deck.countCard() < 2) {
-                game.deck.populateDeck();
-                Collections.shuffle(game.deck.getCards());
-            }
+            game.lowCardInTheDeck();
             Player activePlayer = game.getPlayers().get(i);
             game.playerHandToString(activePlayer);
             game.playerHandValueToString(activePlayer);
-            if ((activePlayer.cardsValue() == 21) && (activePlayer.countCard()) == 2) {
-                System.out.println("Whooo, that's his majesty the blackjack");
-            }
+            game.checkPlayerHasBlackjack(activePlayer);
             game.twistOrStand();
             String choice = scanner.next();
             int choiceMade = parseInt(choice);
             while (choiceMade != 2) {
-                if (game.deck.countCard() < 2) {
-                    game.deck.populateDeck();
-                    Collections.shuffle(game.deck.getCards());
-                }
+                game.lowCardInTheDeck();
                 activePlayer.takeCard(game.deck.getCard(0));
                 System.out.println("You took a :" + game.deck.getCard(0).toString());
                 game.playerHandValueToString(activePlayer);
@@ -71,9 +63,7 @@ public class Runner {
 
         game.dealerHandToString(game.dealer);
         game.dealerHandValueToString(game.dealer);
-        if ((game.dealer.cardsValue() == 21) && (game.dealer.countCard()) == 2) {
-            System.out.println("Damn, the dealer got his majesty the blackjack");
-        }
+        game.checkDealerHasBlackjack(game.dealer);
         if (game.checkWinner().isEmpty()) {
             System.out.println("The Dealer won");
         } else {

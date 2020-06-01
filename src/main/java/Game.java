@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Game {
     ArrayList<Player> players;
@@ -102,5 +103,27 @@ public class Game {
     }
     public void dealerHandValueToString(Dealer dealer) {
         System.out.println(dealer.getName() + "'s hand value is " + dealer.cardsValue());
+    }
+    public boolean lowCardInTheDeck(){
+        if (this.deck.countCard() < 2) {
+            this.deck.populateDeck();
+            Collections.shuffle(this.deck.getCards());
+            return true;
+        }
+        return false;
+    }
+    public boolean checkPlayerHasBlackjack(Player activePlayer){
+        if ((activePlayer.cardsValue() == 21) && (activePlayer.countCard()) == 2) {
+            System.out.println("Whooo, that's his majesty the blackjack");
+            return true;
+        }
+        return false;
+    }
+    public boolean checkDealerHasBlackjack(Dealer dealer){
+        if ((dealer.cardsValue() == 21) && (dealer.countCard()) == 2) {
+            System.out.println("Whooo, that's his majesty the blackjack");
+            return true;
+        }
+        return false;
     }
 }
